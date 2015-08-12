@@ -15,9 +15,11 @@ first, compile the plugin and install in to plugin dir
     make
     make install
     
+CAUTION: mysql plugins MUST be built using the same version of the source code and the same build arguments. If mysqld is built as a debug version without cmake parameter -DBUILD_CONFIG, the parameter must not be added when compiling plugins.
+    
 then, load the plugin into mysql
 
-    mysql> INSTALL PLUGIN DISABLE_MYISAM SONAME 'dm.so';
+    mysql> INSTALL PLUGIN DISABLE_MYISAM SONAME 'disable_myisam.so';
     
 MYISAM tables can not be created now. 
 
